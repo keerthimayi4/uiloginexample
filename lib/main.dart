@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:uiloginexample/signuppage.dart';
 import 'package:uiloginexample/splash.dart';
 
 //import 'package:uiloginexample/loginscreen.dart';
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SignUpScreen(),
+      home: SplashScreen(),
     );
   }
 }

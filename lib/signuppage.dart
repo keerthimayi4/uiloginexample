@@ -25,6 +25,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+
                 
                 child: Row(
                   children: [
