@@ -70,35 +70,37 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: 16.0),
-              // Container(
-              //   width: 200,
-              //   height: 800,
-              //   child: Row(
-              //     children: [
-              //       Container(
-              //         height: 100,
-              //         child: TextField(
-              //           controller: passwordcontorller,
-              //           decoration: InputDecoration(
-              //             hintText: "password",
-              //           ),
-              //           obscureText: true,
-              //           obscuringCharacter: "0",
-              //           // decoration: InputDecoration(labelText: 'Password'),
-              //         ),
-              //       ),
-              //       IconButton(
-              //           onPressed: () {
-              //             setState(() {
-              //               showpassword = !showpassword;
-              //             });
-              //             print(showpassword);
-              //           },
-              //           icon: Icon(showpassword ? Icons.abc : Icons.hide_image))
-              //     ],
-              //   ),
-              // ),
-              // SizedBox(height: 16.0),
+              Container(
+                width: 800,
+                height: 100,
+                child: Row(
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 400,
+                      child: TextField(
+                        controller: passwordcontorller,
+                        decoration: InputDecoration(
+                          hintText: "password",
+                        ),
+                        obscureText: showpassword,
+                        obscuringCharacter: "0",
+                        // decoration: InputDecoration(labelText: 'Password'),
+                      ),
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          setState(() {
+                            showpassword = !showpassword;
+                          });
+                          print(showpassword);
+                        },
+                        icon:
+                            Icon(showpassword ? Icons.abc : Icons.abc_outlined))
+                  ],
+                ),
+              ),
+              SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: login,
                 child: Text('Login'),
