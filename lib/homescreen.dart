@@ -51,6 +51,8 @@ class NextPage extends StatefulWidget {
 
   @override
   State<NextPage> createState() => _NextPageState();
+
+  substring(int i, int j) {}
 }
 
 class _NextPageState extends State<NextPage> {

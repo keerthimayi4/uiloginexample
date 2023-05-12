@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uiloginexample/signuppage.dart';
 
 import 'homescreen.dart';
 
@@ -11,7 +12,13 @@ class _LoginPageState extends State<LoginPage> {
   String error = ' message';
   TextEditingController namecontroller = TextEditingController();
 
+  // It allows you to control and manipulate the text entered by the user,
+  // as well as listen to changes in the text input.
+  //enables you to retrieve, set, listen to, and clear the text
+  // entered by the user in text fields
   TextEditingController passwordcontorller = TextEditingController();
+
+  signUp() {}
 
   void login() {
     print(namecontroller.text);
@@ -74,6 +81,19 @@ class _LoginPageState extends State<LoginPage> {
             ElevatedButton(
               onPressed: login,
               child: Text('Login'),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) => SignUpScreen()),
+                    ));
+              },
+              child: Text('signUp'),
             ),
             Text(error)
           ],
