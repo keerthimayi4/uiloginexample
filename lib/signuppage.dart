@@ -11,16 +11,10 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   // Initial Selected Value
-  String dropdownvalue = 'Item 1';
+  String dropdownvalue = 'Select item';
 
   // List of items in our dropdown menu
-  var items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-  ];
+  var items = ['Select item', 'Male', 'Female'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,28 +22,52 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              child: DropdownButton(
-                // Initial Value
-                value: dropdownvalue,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                
+                child: Row(
+                  children: [
+                    Text("Select gender: -"),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    DropdownButton(
+                      // Initial Value
+                      value: dropdownvalue,
 
-                // Down Arrow Icon
-                icon: const Icon(Icons.keyboard_arrow_down),
+                      // Down Arrow Icon
+                      // icon: const Icon(Icons.person),
 
-                // Array list of items
-                items: items.map((String items) {
-                  return DropdownMenuItem(
-                    value: items,
-                    child: Text(items),
-                  );
-                }).toList(),
-                // After selecting the desired option,it will
-                // change button value to selected value
-                onChanged: (String? newValue) {
-                  setState(() {
-                    dropdownvalue = newValue!;
-                  });
-                },
+                      // Array list of items
+                      items: items.map((String value) {
+                        return DropdownMenuItem(
+                          value: value,
+                          child: Row(
+                            children: [
+                              Text(value),
+                              Icon(
+                                value == "Male"
+                                    ? Icons.male
+                                    : value == "Select item"
+                                        ? Icons.person
+                                        : Icons.female,
+                              )
+                            ],
+                          ),
+                        );
+                      }).toList(),
+
+                      // After selecting the desired option,it will
+                      // change button value to selected value
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          dropdownvalue = newValue!;
+                        });
+                      },
+                    ),
+                  ],
+                ),
               ),
             )
           ],
