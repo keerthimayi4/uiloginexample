@@ -81,22 +81,22 @@ class _LoginPageState extends State<LoginPage> {
                       child: TextField(
                         controller: passwordcontorller,
                         decoration: InputDecoration(
-                          hintText: "password",
+                          labelText: "password",
                         ),
                         obscureText: showpassword,
                         obscuringCharacter: "0",
-                        // decoration: InputDecoration(labelText: 'Password'),
+                        //decoration: InputDecoration(labelText: 'Password'),
                       ),
                     ),
-                    IconButton(
-                        onPressed: () {
-                          setState(() {
-                            showpassword = !showpassword;
-                          });
-                          print(showpassword);
-                        },
-                        icon:
-                            Icon(showpassword ? Icons.abc : Icons.abc_outlined))
+                    // IconButton(
+                    //     onPressed: () {
+                    //       setState(() {
+                    //         showpassword = !showpassword;
+                    //       });
+                    //       print(showpassword);
+                    //     },
+                    //     icon:
+                    //         Icon(showpassword ? Icons.abc : Icons.abc_outlined))
                   ],
                 ),
               ),
